@@ -1,0 +1,24 @@
+body {
+  min-width:400px;
+  overflow-x:hidden;
+  text-align: center;
+}
+
+div{	
+	background-color: white;
+}
+
+
+th {text-align:left;}
+
+textarea {font-size: 18px;font-family: sans-serif;}
+
+a{color:red;}
+
+#everything{background-color: white; }
+
+img.icon{border:none;}
+
+button.big{padding:5px;margin:0px 0px 4px 4px;color:#0C91F0;}
+
+h1.heading2{padding:1px;margin:1px;margin-bottom:4px;font-family:sans-serif;color:#0C91F0;}
