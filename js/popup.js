@@ -10,6 +10,7 @@ jQuery(document).ready(function($) {
     pop : {label:"Pop", fx:new Audio("/sounds/pop.ogg")},
     ding : {label:"Ding", fx:new Audio("/sounds/ding.ogg")},
     buzz : {label:"Buzz", fx:new Audio("/sounds/buzz.ogg")},
+    correct : {label:"Correct", fx:new Audio("/sounds/131660__bertrof__game-sound-correct.wav")},
 
     boo : {label:"Boo", fx:new Audio("/sounds/boo.ogg")},
     cricket : { label:"Crickets", fx:new Audio("/sounds/cricket.ogg")},
