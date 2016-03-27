@@ -12,16 +12,72 @@
 </head>
 
 <body>
-    <h1 class="heading2">Sound Effects <img class="icon" src="/img/Speaker-icon-24.png"/></h1  >
 
+    <div id="everything">
+        <h1 class="heading2">Make Some Noise<img class="icon" src="/img/Speaker-icon-24.png"/></h1  >
+    </div> 
 
-    <div id="everything"></div> 
+    <div id="speak">
+        <h1 class="heading2">Say Something</h1  >
+        <input type="text" id="quote" placeholder="Say something here" value="Hey now!"></input>
+        <button id="say" >say</button>
+        <button id="clear" >clear</button> <br/>
 
-    <div id="secret" style="display:none;">
-        <h2 class="heading2">Secret Sounds</h2  >
+                            
+
+                <br/>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="voiceName">Voice</label>
+                            </td>
+                            <td colspan="2">
+                                <select name="voiceName" id="voiceName"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 <label id="rateLabel" for="voiceRate" title="reset" class="small">Rate</label>
+                            </td>
+                            <td>
+                                <input name="voiceRate" id="voiceRate" disabled="disabled" class="small"/>
+                            </td>
+                            <td width="100%"><div id="voiceRateSlider"></div></td>
+                        </tr>
+                    </table>
+                   
+                    
+                </div>
+                
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                 <label id="pitchLabel" for="voicePitch" title="reset" class="small">Pitch</label>
+                            </td>
+                            <td>
+                                <input name="voicePitch" id="voicePitch" disabled="disabled" class="small"/>
+                            </td>
+                            <td width="100%"><div id="voicePitchSlider"></div></td>
+                        </tr>
+                    </table>
+                   
+                    
+                </div>
+                
+                
+                
     </div>
 
-    <button id="buttonTemplate" class="big" style="display:none;"></button>
+    <div id="secret" style="display:none;">
+        <h1 class="heading2">Secret Sounds (<span id="hideSecret">hide</span>)</h1>
+    </div>
+    
+    <div id="draggableTemplate" class="draggable" style="display:none;">
+        <button id="buttonTemplate" class="big" ></button>
+    </div>
+    
   
   </body>
 </html>

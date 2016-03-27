@@ -20,5 +20,10 @@ a{color:red;}
 img.icon{border:none;}
 
 button.big{padding:5px;margin:0px 0px 4px 4px;color:#0C91F0;}
+label.small{padding:0px;margin:0px 0px 0px 0px;color:#0C91F0;font-size: 10px;!important;}
 
 h1.heading2{padding:1px;margin:1px;margin-bottom:4px;font-family:sans-serif;color:#0C91F0;}
+
+input.small {width:30px;}
+
+#voiceName {width: 100%;}
