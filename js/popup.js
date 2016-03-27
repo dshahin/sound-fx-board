@@ -1,6 +1,6 @@
 var voiceOptions = {
     //voiceName: 'Google UK English Male',
-    enqueue: false,
+    enqueue: true,
     pitch: 1,
     rate: 1,
     volume: 1
@@ -132,11 +132,16 @@ jQuery(document).ready(function($) {
         'outline': 'none',
         'cursor': 'text',
         'width': '50%'
+    }).keypress(function(e){
+        if(e.keyCode === 13){
+            $('#say').click();
+        }
     });
 
     $('#say').button().click(function() {
         var quote = $('#quote').val();
         say(quote);
+        $('#quote').select();
         
     });
 
@@ -201,7 +206,7 @@ jQuery(document).ready(function($) {
             showSecret : false,
             voiceOptions : voiceOptions
         };
-        
+
         chrome.storage.sync.set(prefs, function() {
             console.log('saving prefs:',prefs);
         });

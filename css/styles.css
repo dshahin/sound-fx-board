@@ -27,3 +27,5 @@ h1.heading2{padding:1px;margin:1px;margin-bottom:4px;font-family:sans-serif;colo
 input.small {width:30px;}
 
 #voiceName {width: 100%;}
+
+#hideSecret {cursor:pointer;}
