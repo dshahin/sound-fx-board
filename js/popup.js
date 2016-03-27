@@ -6,14 +6,18 @@ jQuery(document).ready(function($) {
 
     doorbell : {label:"Doorbell", fx:new Audio("/sounds/doorbell.ogg")},
     phone : {label:"Phone", fx:new Audio("/sounds/cellring.ogg")},
+    crash : {label:"Crash", fx:new Audio("/sounds/237375_squareal_car-crash.ogg")},
 
     pop : {label:"Pop", fx:new Audio("/sounds/pop.ogg")},
     ding : {label:"Ding", fx:new Audio("/sounds/ding.ogg")},
     buzz : {label:"Buzz", fx:new Audio("/sounds/buzz.ogg")},
     correct : {label:"Correct", fx:new Audio("/sounds/131660__bertrof__game-sound-correct.wav")},
 
+    
+    fart : {label:"Fart", fx:new Audio("/sounds/249583__ycbcr__short-definite-fart.wav")},
     boo : {label:"Boo", fx:new Audio("/sounds/boo.ogg")},
     cricket : { label:"Crickets", fx:new Audio("/sounds/cricket.ogg")},
+    rooster : { label:"Rooster", fx:new Audio("/sounds/166745_cocoricosound_cock-a-doodle-doo.ogg")}, 
     laughs : {label:"Laughs", fx:new Audio("/sounds/laugh.ogg")},
     price : {label:"The Price Is Wrong", fx:new Audio("/sounds/horns.ogg")},
     actlikeaman : {label:"Act like a man", fx:new Audio("/sounds/actlikeaman.ogg")},
@@ -43,7 +47,7 @@ jQuery(document).ready(function($) {
       var $button = $(this),
         $snd = $button.attr('snd');
         snds[$snd].fx.play();
-    }
+    };
 
     $button.
       button().
