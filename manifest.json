@@ -1,6 +1,6 @@
 {
   "name": "Sound Effects Board",
-  "version": "2.3",
+  "version": "2.4",
   "manifest_version": 2,
   "description": "Personal Sound FX board for chrome",
   "browser_action": {
@@ -20,7 +20,7 @@
   "options_ui": {
       "page": "/html/credits.html",
       "chrome_style": true,
-      "open_in_tab": false
+      "open_in_tab": true
   }
 
 }
