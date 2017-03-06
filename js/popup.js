@@ -16,7 +16,7 @@ chrome.storage.sync.get(function(prefs) {
         $('#secret').show();
     }
 
-    if(prefs.voiceOptions){
+    if (prefs.voiceOptions) {
         voiceOptions = prefs.voiceOptions;
         $("#voicePitch").val(voiceOptions.pitch);
         $('#voicePitchSlider').slider({ value: voiceOptions.pitch });
@@ -49,15 +49,15 @@ var say = function(quote) {
 
 };
 
-var saveVoiceOptions = function(){
+var saveVoiceOptions = function() {
 
     var prefs = {
-        voiceOptions : voiceOptions,
-        showSecret : showSecret
+        voiceOptions: voiceOptions,
+        showSecret: showSecret
     };
 
     chrome.storage.sync.set(prefs, function() {
-        console.log('saving prefs:',prefs);
+        console.log('saving prefs:', prefs);
     });
 };
 
@@ -132,8 +132,8 @@ jQuery(document).ready(function($) {
         'outline': 'none',
         'cursor': 'text',
         'width': '50%'
-    }).keypress(function(e){
-        if(e.keyCode === 13){
+    }).keypress(function(e) {
+        if (e.keyCode === 13) {
             $('#say').click();
         }
     });
@@ -142,7 +142,7 @@ jQuery(document).ready(function($) {
         var quote = $('#quote').val();
         say(quote);
         $('#quote').select();
-        
+
     });
 
     $('#clear').button().click(function() {
@@ -152,7 +152,7 @@ jQuery(document).ready(function($) {
     $('#voiceName').val(voiceOptions.voiceName).change(function() {
         voiceOptions.voiceName = $(this).val();
         saveVoiceOptions();
-        
+
     });
 
     $('#voiceRateSlider').slider({
@@ -164,7 +164,7 @@ jQuery(document).ready(function($) {
             voiceOptions.rate = ui.value;
             $("#voiceRate").val(ui.value);
             saveVoiceOptions();
-            
+
         }
     });
 
@@ -172,7 +172,7 @@ jQuery(document).ready(function($) {
         voiceOptions.rate = 1;
         $("#voiceRate").val(1);
         $('#voiceRateSlider').slider({ value: 1 });
-        
+
     });
 
     $("#voiceRate").val(voiceOptions.rate);
@@ -187,7 +187,7 @@ jQuery(document).ready(function($) {
             voiceOptions.pitch = ui.value;
             $("#voicePitch").val(ui.value);
             saveVoiceOptions();
-            
+
         }
     });
 
@@ -195,47 +195,47 @@ jQuery(document).ready(function($) {
         voiceOptions.pitch = 1;
         $("#voicePitch").val(1);
         $('#voicePitchSlider').slider({ value: 1 });
-        
+
     });
 
     $("#voicePitch").val(voiceOptions.pitch);
 
-    $('#hideSecret').click(function(){
+    $('#hideSecret').click(function() {
         $('#secret').hide();
-        var prefs= {
-            showSecret : false,
-            voiceOptions : voiceOptions
+        var prefs = {
+            showSecret: false,
+            voiceOptions: voiceOptions
         };
 
         chrome.storage.sync.set(prefs, function() {
-            console.log('saving prefs:',prefs);
+            console.log('saving prefs:', prefs);
         });
     });
 
-    $("#sound-input").change(function(){
+    $("#sound-input").change(function() {
         readURL(this);
     });
 
     makeButtons(sounds, '#everything');
     makeButtons(secretSounds, '#secret');
 
-    chrome.storage.local.get('userSound', function (result) {
+    chrome.storage.local.get('userSound', function(result) {
         var userSound = result.userSound;
-        if(userSound){
+        if (userSound) {
             $('#sound-control').attr('src', userSound).show();
             $("#sound-input").hide();
             $('.removeSound').show();
-        }else{
+        } else {
             $("#sound-input").show();
             $('#sound-control').hide();
             $('.removeSound').hide();
         }
     });
 
-    $('.removeSound').click(function(){
+    $('.removeSound').click(function() {
         var $btn = $(this);
-        $btn.siblings('.sound-control').hide();
-        $btn.siblings('.sound-input').show();
+        $('.sound-control').hide();
+        $('.sound-input').show();
         $btn.hide();
     });
 
@@ -247,9 +247,9 @@ function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
-        reader.onload = function (e) {
+        reader.onload = function(e) {
             $('#sound-control').attr('src', e.target.result).show();
-            chrome.storage.local.set({'userSound': e.target.result});
+            chrome.storage.local.set({ 'userSound': e.target.result });
             $("#sound-input").hide();
             $('.removeSound').show();
         }
