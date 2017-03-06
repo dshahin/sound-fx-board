@@ -212,7 +212,48 @@ jQuery(document).ready(function($) {
         });
     });
 
+    $("#sound-input").change(function(){
+        readURL(this);
+    });
+
     makeButtons(sounds, '#everything');
     makeButtons(secretSounds, '#secret');
 
+    chrome.storage.local.get('userSound', function (result) {
+        var userSound = result.userSound;
+        if(userSound){
+            $('#sound-control').attr('src', userSound).show();
+            $("#sound-input").hide();
+            $('.removeSound').show();
+        }else{
+            $("#sound-input").show();
+            $('#sound-control').hide();
+            $('.removeSound').hide();
+        }
+    });
+
+    $('.removeSound').click(function(){
+        var $btn = $(this);
+        $btn.siblings('.sound-control').hide();
+        $btn.siblings('.sound-input').show();
+        $btn.hide();
+    });
+
+
 });
+
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#sound-control').attr('src', e.target.result).show();
+            chrome.storage.local.set({'userSound': e.target.result});
+            $("#sound-input").hide();
+            $('.removeSound').show();
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
