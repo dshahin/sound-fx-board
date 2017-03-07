@@ -1,6 +1,6 @@
 {
     "name": "Sound Effects Board",
-    "version": "3.4.1",
+    "version": "3.4.2",
     "manifest_version": 2,
     "description": "Personal Sound FX board for chrome",
     "browser_action": {
@@ -14,6 +14,7 @@
     "permissions": [
         "notifications",
         "storage",
+        "unlimitedStorage",
         "tts"
     ],
     "web_accessible_resources": [
